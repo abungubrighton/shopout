@@ -1,10 +1,13 @@
-import {Navbar, Nav,Container} from 'react-bootstrap'
+import { Navbar, Nav, Container } from 'react-bootstrap';
+import { LinkContainer } from 'react-router-bootstrap'
 const Header = () => {
     return (
         <header>
-            <Navbar   expand="lg" className="bg-dark" variant="dark">
+            <Navbar expand="lg" className="bg-dark" variant="dark">
                 <Container>
-                    <Navbar.Brand href="/">Shopout</Navbar.Brand>
+                    <LinkContainer to="/">
+                        <Navbar.Brand>Shopout</Navbar.Brand>
+                    </LinkContainer>
                     <Navbar.Toggle aria-controls="navbarScroll" />
                     <Navbar.Collapse id="navbarScroll">
                         <Nav
@@ -12,10 +15,14 @@ const Header = () => {
                             style={{ maxHeight: '100px' }}
                             navbarScroll
                         >
-                            <Nav.Link href="/cart"><i className='fas fa-shopping-cart'></i>Cart</Nav.Link>
-                            <Nav.Link href="/login"><i className="fas fa-user"></i>Login</Nav.Link>
+                            <LinkContainer to="/cart">
+                                <Nav.Link ><i className='fas fa-shopping-cart'></i>Cart</Nav.Link>
+                            </LinkContainer>
+                            <LinkContainer to="/login">
+                                <Nav.Link ><i className="fas fa-user"></i>Login</Nav.Link>
+                            </LinkContainer>
                         </Nav>
-                        
+
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
