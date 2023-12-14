@@ -6,7 +6,7 @@ const products = [{
     "brand": "Apple",
     "category": "Electronics",
     "price": 89.99,
-    "countInStock": 100,
+    "countInStock": 0,
     "rating": 4.5,
     "numReviews": 12
 
