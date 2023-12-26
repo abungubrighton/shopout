@@ -1,5 +1,9 @@
 Work In Progress
+
 An Ecommerce platform built on React and Django with Redux statemanagement and ReactBootstrap
+![shopout](https://github.com/abungubrighton/shopout/assets/111748970/3d1c1009-94e8-4b69-a55e-7998dfae7909)
+
+
 ### Features
 * Full featured shopping cart
 * Product reviews and ratings
@@ -16,14 +20,14 @@ An Ecommerce platform built on React and Django with Redux statemanagement and R
 
 
 ### Download & Setup Instructions
-1 - Clone project: git clone https://github.com/divanov11/proshop_django/
-2 - cd shopout
-3 - Create virtual environment: virtualenv myenv
-4 - cd myenv
-5 - myenv\scripts\activate
-6 - pip install requirements.txt
-7 - python manage.py runserver
+1. Clone project: git clone https://github.com/divanov11/proshop_django/
+2. cd shopout
+3. Create virtual environment: virtualenv myenv
+4. cd myenv
+5. myenv\scripts\activate
+6. pip install requirements.txt
+7. python manage.py runserver
 
 ### Install react modules
-1 - cd frontend
-2 - npm install
+1. cd frontend
+2. npm install
