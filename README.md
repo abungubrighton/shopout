@@ -1,4 +1,4 @@
-Work In Progress
+**Work In Progress**
 
 An Ecommerce platform built on React and Django with Redux statemanagement and ReactBootstrap
 ![shopout](https://github.com/abungubrighton/shopout/assets/111748970/3d1c1009-94e8-4b69-a55e-7998dfae7909)
