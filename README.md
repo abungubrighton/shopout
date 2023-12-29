@@ -2,6 +2,8 @@
 
 An Ecommerce platform built on React and Django with Redux state management and ReactBootstrap
 ![shopout](https://github.com/abungubrighton/shopout/assets/111748970/3d1c1009-94e8-4b69-a55e-7998dfae7909)
+![image](https://github.com/abungubrighton/shopout/assets/111748970/75ad1df3-210c-4740-8108-95aa6806acb3)
+
 
 
 ### Features
