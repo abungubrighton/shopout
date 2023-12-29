@@ -14,7 +14,7 @@ const ProductScreen = () => {
             setProduct(data);
         };
         fetchProduct();
-    }, [])
+    }, [id])
     
     return (
         <div>
@@ -65,7 +65,7 @@ const ProductScreen = () => {
                             </ListGroup.Item>
 
                             <ListGroup.Item>
-                                <Button className='btn-block btn w-100' disabled={product.countInStock == Zero} type='button'>Add to cart</Button>
+                                <Button className='btn-block btn w-100' disabled={product.countInStock === Zero} type='button'>Add to cart</Button>
                             </ListGroup.Item>
                         </ListGroup>
                     </Card>
