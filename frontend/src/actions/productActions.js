@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { PRODUCT_LIST_REQUEST, PRODUCT_LIST_SUCCESS, PRODUCT_LIST_FAIL } from '../constants/productConstants';
-const listProducts = () => async(dispatch) => {
+export const listProducts = () => async(dispatch) => {
     /**
      * Function that communicates to the reducer that handles list of products on the intentions (actions) to affect the data in store
      * dispatch  -> used to declare the action types that will affect the  products list
