@@ -1,9 +1,9 @@
 from django.shortcuts import get_object_or_404
-from .serializers import ProductSerializer
-
+from .serializers import MyTokenObtainPairSerializer, ProductSerializer
 from .models import Product
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
+from rest_framework_simplejwt.views import TokenObtainPairView
 
 # Create your views here.
 
@@ -31,3 +31,8 @@ def getProduct(request,pk):
     product = get_object_or_404(Product,pk=pk)
     serializer = ProductSerializer(product,many=False)
     return Response(serializer.data)
+
+
+class MyTokenObtainPairView(TokenObtainPairView):
+    serializer_class = MyTokenObtainPairSerializer
+
