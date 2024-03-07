@@ -1,5 +1,5 @@
 from django.shortcuts import get_object_or_404
-from .serializers import MyTokenObtainPairSerializer, ProductSerializer
+from .serializers import MyTokenObtainPairSerializer, ProductSerializer, UserSerializer
 from .models import Product
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
@@ -32,7 +32,13 @@ def getProduct(request,pk):
     serializer = ProductSerializer(product,many=False)
     return Response(serializer.data)
 
+@api_view(['GET'])
+def getUserProfile(request):
+    user = request.user
+    serializer = UserSerializer(user,many=False)
+    return Response(serializer.data)
 
+# for login, returns user data and TOKEN
 class MyTokenObtainPairView(TokenObtainPairView):
     serializer_class = MyTokenObtainPairSerializer
 
