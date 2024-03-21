@@ -5,19 +5,20 @@ import {
     USER_LOGIN_SUCCESS,
     LOGIN_URL
 } from "../constants/userConstants";
+import axios from "axios";
 export const login = (email, password) => async(dispatch) => {
     dispatch({
         type: USER_LOGIN_REQUEST
     });
 
     try {
-        const postData = { username, password }
+        const postData = { "username": email, "password": password };
         const config = {
             Headers: {
                 'Content-Type': 'application/json'
             }
         }
-        const { data } = await Axios.post(LOGIN_URL, postData, config);
+        const { data } = await axios.post(LOGIN_URL, postData, config);
         dispatch({
             type: USER_LOGIN_SUCCESS,
             payload: data
