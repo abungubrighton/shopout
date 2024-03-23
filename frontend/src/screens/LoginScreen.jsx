@@ -6,7 +6,6 @@ import { login } from "../actions/userActions";
 import FormContainer from '../components/FormContainer';
 import  Message from "../components/Message";
 import Loader from "../components/Loader";
-const MINIMUM_PROPERTIES_REQUIRED = 1;
 const LoginScreen = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -20,7 +19,7 @@ const LoginScreen = () => {
     const userLogin = useSelector(state => state.userLogin);
     const { loading, userInfo, error } = userLogin;
     useEffect(() => {
-        if (Object.keys(userLogin).length > MINIMUM_PROPERTIES_REQUIRED) {
+        if (userInfo) {
             // if user is already logged in send them to a redirect page, default is Homepage
             navigate(redirectURL);
         }
