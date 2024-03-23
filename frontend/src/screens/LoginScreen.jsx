@@ -4,7 +4,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import { login } from "../actions/userActions";
 import FormContainer from '../components/FormContainer';
-
+import  Message from "../components/Message";
+import Loader from "../components/Loader";
+const MINIMUM_PROPERTIES_REQUIRED = 1;
 const LoginScreen = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -18,7 +20,7 @@ const LoginScreen = () => {
     const userLogin = useSelector(state => state.userLogin);
     const { loading, userInfo, error } = userLogin;
     useEffect(() => {
-        if (userInfo) {
+        if (Object.keys(userLogin).length > MINIMUM_PROPERTIES_REQUIRED) {
             // if user is already logged in send them to a redirect page, default is Homepage
             navigate(redirectURL);
         }
@@ -30,6 +32,8 @@ const LoginScreen = () => {
     return (
         <FormContainer>
             <h1>Sign In</h1>
+            {error && <Message variant="danger">{error} </Message>}
+            {loading && <Loader/>}
             <Form onSubmit={submitHandler}>
                 <Form.Group controlId="email">
                     <Form.Label>Email Address</Form.Label>
