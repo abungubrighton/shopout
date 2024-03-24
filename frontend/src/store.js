@@ -1,7 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { productDetailsReducer, productListReducer } from './reducers/productReducers';
 import { cartReducer } from './reducers/cartReducers'
-import { userLoginReducer } from './reducers/userReducers';
+import { userLoginReducer, userRegisterReducer } from './reducers/userReducers';
 
 // load preloaded state from local storage
 
@@ -13,7 +13,8 @@ const store = configureStore({
         productList: productListReducer,
         productDetail: productDetailsReducer,
         cart: cartReducer,
-        userLogin: userLoginReducer
+        userLogin: userLoginReducer,
+        userRegister: userRegisterReducer
     },
     preloadedState: {
         cart: { cartItems: cartItemsFromStorage },
